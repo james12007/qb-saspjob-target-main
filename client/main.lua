@@ -23,7 +23,7 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         SetBlipRotation(blip, math.ceil(playerLocation.w))
         SetBlipScale(blip, 1.0)
         if playerJob == "sasp" then
-            SetBlipColour(blip, 21)
+            SetBlipColour(blip, 29)
         else
             SetBlipColour(blip, 5)
         end
@@ -137,7 +137,7 @@ RegisterNetEvent('sasp:client:sendBillingMail', function(amount)
 end)
 
 RegisterNetEvent('sasp:client:UpdateBlips', function(players)
-    if PlayerJob and (PlayerJob.name == 'sasp' or PlayerJob.name == 'ambulance' or Playerjob.name == 'police') and
+    if PlayerJob and (PlayerJob.name == 'sasp' or PlayerJob.name == 'ambulance' or Playerjob.name == 'police' or Playerjob.name == 'sheriff') and
         onDuty then
         if DutyBlips then
             for k, v in pairs(DutyBlips) do
